@@ -44,7 +44,7 @@ export const useUserStore = defineStore('UserStore', {
         const formData = new FormData()
         formData.append('username', payload.username)
         formData.append('password', payload.password)
-        const response = await axios.post("https://eripio.east.dev.pipeline.company3.com" + `/auth/token`, formData, {
+        const response = await axios.post(API_URL + `/auth/token`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data', // Important for file uploads
           },
