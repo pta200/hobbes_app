@@ -73,7 +73,7 @@
       <template v-slot:text>
         <v-row>
           <v-col cols="12">
-            <v-text-field v-model="formModel.book_name" label="Name"></v-text-field>
+            <v-text-field v-model="formModel.book_name" label="Name" :rules="[requiredRule]"></v-text-field>
           </v-col>
 
           <v-col cols="12" md="6">
@@ -137,6 +137,8 @@ const headers = [
 onMounted(() => {
   reset()
 })
+
+const requiredRule = value => !!value || 'Field is required.';
 
 function add() {
   formModel.value = createNewRecord()
